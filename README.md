@@ -54,9 +54,9 @@ const activities = [
 A continuació hauràs d'implementar les següents funcions (cada funció ha de retornar el valor que s'indica):
 
 - `getSleepHours(day)`: Retorna les hores de son d'un dia específic.
-- `getActualSleepHours()`: Retorna el total d'hores reals de son que has dormit la setmana passada.
+- `getActualSleepHours()`: Retorna el total d'hores reals de son que has dormit durant els dies laborals.
 - `getIdealSleepHours()`: Retorna el total d'hores ideals de son que prefereixes dormir la setmana
-- `getFreeTimeHours()`: Retorna les hores lliures disponibles a la setmana després de descomptar les hores de son i de treball.
+- `getFreeTimeHours()`: Retorna les hores lliures disponibles a la setmana sense comptar el cap de setmana i després de descomptar les hores de son i de treball (5 dies de feina a la setmana)
 - `calculateActivitiesTime(activities)`: Permet als usuaris especificar les activitats que volen realitzar (teniu la mostra) i retorna el temps necessari TOTAL per completar-les.
 - `canDoActivities(activities)`: ha de cridar `calculateActivitiesTime(activities)` i comprovar si hi ha prou temps lliure per realitzar totes les activitats. Mostra un missatge a la consola segons la situació: si es poden fer totes les activitats o si no hi ha prou temps lliure.
 

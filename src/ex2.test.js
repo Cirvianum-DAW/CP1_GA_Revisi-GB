@@ -3,7 +3,7 @@ const {
   getActualSleepHours,
   getIdealSleepHours,
   getFreeTimeHours,
-  calculaeActivityTime,
+  calculateActivityTime,
   canDoActivities,
 } = require('./Ex2');
 
@@ -18,7 +18,7 @@ describe('Ex2', () => {
     expect(getSleepHours('sunday')).toBe(8);
   });
   test('getActualSleepHours', () => {
-    expect(getActualSleepHours()).toBe(51);
+    expect(getActualSleepHours()).toBe(34);
   });
 
   test('getIdealSleepHours', () => {
@@ -26,29 +26,40 @@ describe('Ex2', () => {
   });
 
   test('getFreeTimeHours', () => {
-    expect(getFreeTimeHours()).toBe(5);
+    expect(getFreeTimeHours()).toBe(46);
   });
 
   test('calculateActivityTime', () => {
     expect(
-      calculaeActivityTime([
-        { name: 'Gym', time: 1 },
-        { name: 'Party', time: 2 },
-        { name: 'Watch TV', time: 3 },
-        { name: 'Play videogames', time: 5 },
+      calculateActivityTime([
+        { name: 'Gym', time: 5 },
+        { name: 'Party', time: 4 },
+        { name: 'Watch TV', time: 6 },
+        { name: 'Read', time: 5 },
       ])
-    ).toBe(11);
+    ).toBe(20);
   });
 
   test('canDoActivities', () => {
     expect(
       canDoActivities([
-        { name: 'Gym', time: 1 },
-        { name: 'Party', time: 2 },
-        { name: 'Watch TV', time: 3 },
-        { name: 'Play videogames', time: 5 },
+        { name: 'Gym', time: 5 },
+        { name: 'Party', time: 4 },
+        { name: 'Watch TV', time: 6 },
+        { name: 'Read', time: 5 },
       ])
-    ).toBe("You can't do all the activities");
+    ).toBe('Pots fer totes les activitats');
+  });
+
+  test('cannotDoActivities', () => {
+    expect(
+      canDoActivities([
+        { name: 'Gym', time: 12 },
+        { name: 'Party', time: 10 },
+        { name: 'Watch TV', time: 10 },
+        { name: 'Read', time: 15 },
+      ])
+    ).toBe('No pots fer totes les activitats');
   });
 });
 
